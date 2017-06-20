@@ -1,0 +1,27 @@
+<html>
+<body>
+ 
+ 
+<input     class="xxx" 
+           type="textarea"
+           rows="50" 
+           cols="10" 
+           role="markdown"  
+           tal:attributes="id string:${view/id};
+           name view/name;
+           value view/value;
+           disabled view/disabled;
+           alt view/alt;
+           accesskey view/accesskey;
+           onselect view/onselect;"   />
+
+<script 
+    type="text/javascript" src="++resource++medialog.markdown/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+ 
+ 
+   <div tal:content="structure view/render_html" />
+   
+   <a href="#" class="pat-contentloader" data-pat-contentloader="url:view/render_html;">Load content</a>
+   
+</body>
+</html>
