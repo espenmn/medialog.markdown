@@ -7,6 +7,8 @@ from plone.autoform.interfaces import IFormFieldProvider
 from zope.interface import alsoProvides
 from zope.i18nmessageid import MessageFactory
 
+from z3c.form.browser.textarea import TextAreaFieldWidget
+
 from medialog.markdown.widgets.widget import MarkdownFieldWidget
 
 _ = MessageFactory('medialog.markdown')
@@ -15,24 +17,15 @@ _ = MessageFactory('medialog.markdown')
 class IMarkdownBehavior(form.Schema):
     """ A markdown text field"""
     
-    markdown = schema.TextLine(
+    markdown = schema.Text(
         title = _("markdown", default=u"Markdown"),
         required = False,
         description = _("help_markdown",
                       default="Markdown text"),
     )
-    
-    bodyText = RichText(
-        title=u"Body text",
-        default_mime_type='text/x-web-markdown',
-        output_mime_type='text/html',
-        allowed_mime_types=('text/x-web-markdown',),
-        default=u"Default value"
-    )
-
+  
     form.widget(
         markdown=MarkdownFieldWidget,
-        bodyText=MarkdownFieldWidget,
     )
 
 alsoProvides(IMarkdownBehavior, IFormFieldProvider)

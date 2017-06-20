@@ -2,7 +2,7 @@
 <body>
  
  
-<input     class="xxx" 
+<textarea    class="xxx" 
            type="textarea"
            rows="50" 
            cols="10" 
@@ -13,7 +13,8 @@
            disabled view/disabled;
            alt view/alt;
            accesskey view/accesskey;
-           onselect view/onselect;"   />
+           onselect view/onselect;"   
+           tal:content="view/value"/>
 
 <script 
     type="text/javascript" src="++resource++medialog.markdown/bootstrap-3.2.0/js/bootstrap.min.js"></script>
