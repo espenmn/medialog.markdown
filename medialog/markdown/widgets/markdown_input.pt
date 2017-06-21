@@ -2,7 +2,8 @@
 <body>
  
  
-<textarea  type="textarea"
+<textarea  class="markdown-textarea"
+           type="textarea"
            rows="50" 
            cols="10" 
            role="markdown"  
@@ -32,15 +33,13 @@
 <script>
   require([
     'jquery',
-    'tinymce',
-    '++plone++static/components/tinymce-builded/js/tinymce/tinymce',
     '++resource++medialog.markdown/twExoticMarkdownEditor.js',
     '++resource++medialog.markdown/tinymceBubbleBar.js',
     '++resource++medialog.markdown/twPreCodeManager.js',
     '++resource++medialog.markdown/modxMagicHoverLink.js'  // Note: no `.js`
   ], function($) {
        tinymce.init({
-		  selector: "textarea",
+		  selector: ".markdown-textarea",
 		  //inline: true, //for contenteditable selector
 		  forced_root_block : "", //!important
 		  force_br_newlines : true, //!important
