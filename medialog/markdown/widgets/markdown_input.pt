@@ -16,8 +16,7 @@
            onselect view/onselect;"   
            tal:content="view/value"/>
 
-<!---script 
-    type="text/javascript" src="++resource++medialog.markdown/bootstrap-3.2.0/js/bootstrap.min.js"></script-->
+<!---script type="text/javascript" src="++resource++medialog.markdown/bootstrap-3.2.0/js/bootstrap.min.js"></script-->
  
  
    <div tal:content="structure view/render_markdown" />
@@ -32,11 +31,7 @@
 
 <script>
   require([
-    'jquery',
-    '++resource++medialog.markdown/twExoticMarkdownEditor.js',
-    '++resource++medialog.markdown/tinymceBubbleBar.js',
-    '++resource++medialog.markdown/twPreCodeManager.js',
-    '++resource++medialog.markdown/modxMagicHoverLink.js'  // Note: no `.js`
+    'tinymce',
   ], function($) {
        tinymce.init({
 		  selector: ".markdown-textarea",
