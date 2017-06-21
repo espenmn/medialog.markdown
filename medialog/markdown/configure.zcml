@@ -17,10 +17,10 @@
   <!--include package=".browser" /-->
 
  
-     <browser:page
+    <browser:page
         for="*"
-        name="render_html"
-        template="templates/render_html.pt"
+        name="render_markdown"
+        template="templates/render_markdown.pt"
         permission="zope2.View"
     />
   

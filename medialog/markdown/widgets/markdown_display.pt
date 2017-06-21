@@ -6,7 +6,7 @@
      
   
  <body>
-  <div tal:content="structure view/render_html" />
+  <div tal:content="structure view/render_markdown" />
  
 </body>
  </html>

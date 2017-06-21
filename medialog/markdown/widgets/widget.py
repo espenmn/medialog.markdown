@@ -17,7 +17,7 @@ class IMarkdownWidget(interfaces.IWidget):
 class MarkdownWidget(text.TextWidget):
     """Markdown Widget"""
     
-    def render_html(self):
+    def render_markdown(self):
         """Return the preview as a stringified HTML document."""
         portal_transforms = api.portal.get_tool(name='portal_transforms')
         value = self.value
