@@ -29,10 +29,10 @@ class IButtonPair(form.Schema):
         default="fa-exclamation" 
     )
     
-    buttontext = schema.Text(
+    buttontext = schema.TextLine(
         title=_(u'buttontext', 'buttontext'),
         required=False,
-        default=u"""!!! important "Important"\\n    \\0"""
+        default=u"""!!! important "Important"\\n    \0"""
     )
  
 class IMarkdownSettings(form.Schema):
