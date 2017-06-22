@@ -22,15 +22,12 @@ _ = MessageFactory('medialog.markdown')
 class IMarkdownBehavior(form.Schema):
     """ A markdown text field"""
     
-    bodyText = RichText(
+    bodytext = schema.Text(
     	title=u"Body text",
-    	default_mime_type='text/x-web-markdown',
-    	output_mime_type='text/html',
-    	allowed_mime_types=('text/x-web-markdown',),
     )
   
     form.widget(
-          bodyText=MarkdownFieldWidget,
+          bodytext=MarkdownFieldWidget,
     )
           
 alsoProvides(IMarkdownBehavior, IFormFieldProvider)
