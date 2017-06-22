@@ -1,0 +1,6 @@
+<registry>
+<records interface="medialog.markdown.interfaces.IMarkdownSettings">
+<value key="button_pairs"></value>
+</records>
+
+</registry>

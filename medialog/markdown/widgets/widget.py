@@ -8,8 +8,8 @@ from z3c.form import widget
 from z3c.form.browser import text
 
 from plone import api
-#from medialog.markdown.interfaces import IMarkdownSettings
-
+from medialog.markdown.interfaces import IMarkdownSettings
+ 
 
 class IMarkdownWidget(interfaces.IWidget):
     """Markdown widget."""
@@ -64,7 +64,9 @@ class MarkdownWidget(text.TextWidget):
               
     def make_buttons(self):
         buttons = ""
-        btns = [{ 'name':'Viktig', 'icon':'fa fa-exclamation', 'buttontext':'!!! viktig "Merk"\\n    '}]
+        btns = api.portal.get_registry_record(name="button_pairs", interface=IMarkdownSettings)
+        import pdb; pdb.set_trace()
+        #btns = [{ 'name':'Viktig', 'icon':'fa fa-exclamation', 'buttontext':'!!! viktig "Merk"\\n    '}]
         for btn in btns:
             import pdb; pdb.set_trace()
             buttons += self.make_button(btn['name'], btn['icon'], btn['buttontext'])

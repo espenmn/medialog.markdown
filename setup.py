@@ -26,6 +26,7 @@ setup(name='medialog.markdown',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'collective.z3cform.datagridfield',
           'plone.app.dexterity',
           'plone.behavior',
           'plone.directives.form',
