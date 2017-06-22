@@ -25,7 +25,8 @@ class MarkdownWidget(text.TextWidget):
         icon = icon
         buttontext = buttontext
         lenght = len(buttontext)
-        return  """{
+        return 
+        """{
           name: '%(group)s',
           data: [{
             name: '%(name)s',
@@ -46,15 +47,15 @@ class MarkdownWidget(text.TextWidget):
                   chunk = selected.text;
                 }
                 e.replaceSelection('%(buttontext)s' + chunk);
-                cursor = selected.start + %(lenght)i - 1;
+                cursor = selected.start + lenght;
                 
 
                 // Set the cursor
                 e.setSelection(cursor, cursor + chunk.length);
-                }
-              }]
-            },
-            """ % {   'group' : group,
+            }
+          }]
+    },
+    """ % {   'group' : group,
               'name'   : name,
               'title'  : title,
               'icon'   : icon,
@@ -63,9 +64,8 @@ class MarkdownWidget(text.TextWidget):
             }
               
     def make_buttons(self):
-        buttons = ""
-        #for ad in 
-        #    buttons += self.make_button('Viktig', 'fa fa-exclamation', '!!! viktig "Merk"\\n    ')
+        buttons = self.make_button('Viktig', 'fa fa-exclamation', '!!! viktig "Merk"\n    ')
+        import pdb; pdb.set_trace()
         return """<script>
 		  require([
 		  'jquery',
@@ -83,7 +83,8 @@ class MarkdownWidget(text.TextWidget):
 		})
 		  });
 		</script>""" % { 'buttons': buttons }
-		
+         
+    
     def render_markdown(self):
         """Return the preview as a stringified HTML document."""
         portal_transforms = api.portal.get_tool(name='portal_transforms')
