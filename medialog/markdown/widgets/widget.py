@@ -64,8 +64,10 @@ class MarkdownWidget(text.TextWidget):
               
     def make_buttons(self):
         buttons = ""
-        #for ad in 
-        #    buttons += self.make_button('Viktig', 'fa fa-exclamation', '!!! viktig "Merk"\\n    ')
+        btns = [{ 'name':'Viktig', 'icon':'fa fa-exclamation', 'buttontext':'!!! viktig "Merk"\\n    '}]
+        for btn in btns:
+            import pdb; pdb.set_trace()
+            buttons += self.make_button(btn['name'], btn['icon'], btn['buttontext'])
         return """<script>
 		  require([
 		  'jquery',
