@@ -32,7 +32,7 @@ class IButtonPair(form.Schema):
     buttontext = schema.Text(
         title=_(u'buttontext', 'buttontext'),
         required=False,
-        default=u"""!!! important "Important"\\n    """
+        default=u"""!!! important "Important"\\n    \\0"""
     )
  
 class IMarkdownSettings(form.Schema):

@@ -22,7 +22,7 @@ _ = MessageFactory('medialog.markdown')
 class IMarkdownBehavior(form.Schema):
     """ A markdown text field"""
     
-    bodytext = schema.TextLine(
+    bodytext = schema.Text(
     	title=u"Body text",
     )
   
