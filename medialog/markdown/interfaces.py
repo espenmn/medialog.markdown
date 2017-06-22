@@ -26,13 +26,13 @@ class IButtonPair(form.Schema):
     icon = schema.ASCIILine(
         title=_(u'icon', 'Icon'),
         required=False,
-        default="fa\ fa-exclamation" 
+        default="fa-exclamation" 
     )
     
-    buttontext = schema.ASCIILine(
+    buttontext = schema.Text(
         title=_(u'buttontext', 'buttontext'),
         required=False,
-        default='!!! important "Important"\\n\ \ \ \ '
+        default=u"""!!! important "Important"\\n    """
     )
  
 class IMarkdownSettings(form.Schema):

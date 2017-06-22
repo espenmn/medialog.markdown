@@ -65,10 +65,7 @@ class MarkdownWidget(text.TextWidget):
     def make_buttons(self):
         buttons = ""
         btns = api.portal.get_registry_record(name="button_pairs", interface=IMarkdownSettings)
-        import pdb; pdb.set_trace()
-        #btns = [{ 'name':'Viktig', 'icon':'fa fa-exclamation', 'buttontext':'!!! viktig "Merk"\\n    '}]
         for btn in btns:
-            import pdb; pdb.set_trace()
             buttons += self.make_button(btn['name'], btn['icon'], btn['buttontext'])
         return """<script>
 		  require([
