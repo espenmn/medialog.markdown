@@ -10,8 +10,8 @@ from zope.i18nmessageid import MessageFactory
 from z3c.form.browser.textarea import TextAreaFieldWidget
 
 #do I need this?
-#from plone.app.textfield.interfaces import IRichTextValue
-#from plone.app.textfield.interfaces import ITransformer
+from plone.app.textfield.interfaces import IRichTextValue
+from plone.app.textfield.interfaces import ITransformer
 
 
 from medialog.markdown.widgets.widget import MarkdownFieldWidget
@@ -25,8 +25,8 @@ class IMarkdownBehavior(form.Schema):
     bodyText = RichText(
     	title=u"Body text",
     	default_mime_type='text/x-web-markdown',
-    	#output_mime_type='text/html',
-    	#allowed_mime_types=('text/x-web-markdown',),
+    	output_mime_type='text/html',
+    	allowed_mime_types=('text/x-web-markdown',),
     )
   
     form.widget(
