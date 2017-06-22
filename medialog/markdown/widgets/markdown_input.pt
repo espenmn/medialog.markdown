@@ -67,8 +67,8 @@
 				  cursor = selected.start - pointer;
 				} else {
 				  // Empty string before element
-				  e.replaceSelection('!!! viktig "Merk"\n    ' + chunk);
-				  cursor = selected.start + 22;
+				  e.replaceSelection('\n!!! viktig "Merk"\n    ' + chunk);
+				  cursor = selected.start + 23;
 				}
 
                 // Set the cursor
