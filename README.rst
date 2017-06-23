@@ -13,7 +13,10 @@ Markdown Behavior
 --------
 In the dexterity control panel: add 'markdown behavior'
 
-Colorpicker Behavior
+Control Panle
+---------
+In the control panel ( Add-on control panel):
+Add your (extra) buttons
  
 
 Markdown Tile
