@@ -35,6 +35,7 @@
 .md-header { width: 100%; display: block}
 .markdown-textarea {clear: both; }
 .md-preview {overflow: scroll; }
+#clexample1  {overflow: scroll; height: 300px}
 </style>
 
 </body>
