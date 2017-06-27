@@ -34,7 +34,7 @@
 .btn-group {display: inline}
 .md-header { width: 100%; display: block}
 .markdown-textarea {clear: both; }
-.md-preview {overflow: hidden; }
+.md-preview {overflow: scroll; }
 </style>
 
 </body>
