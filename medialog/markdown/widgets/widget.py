@@ -76,6 +76,7 @@ class MarkdownWidget(text.TextWidget):
           ], function($) {
               $(".markdown-textarea").markdown({
               fullscreen:false,
+              resize: 'vertical',
               language: 'nb',
               enableButtons: 'all',
               additionalButtons: [
