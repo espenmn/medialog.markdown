@@ -93,6 +93,15 @@ class MarkdownWidget(text.TextWidget):
         html = data.getData()
         return html
 
+    @property
+    def output(self):
+        """Return the preview as a stringified HTML document."""
+        portal_transforms = api.portal.get_tool(name='portal_transforms')
+        value = self.value
+        data = portal_transforms.convertTo('text/html', value, mimetype='text/x-web-markdown')
+        html = data.getData()
+        return html
+
     zope.interface.implementsOnly(IMarkdownWidget)
     
         
