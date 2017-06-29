@@ -17,6 +17,10 @@
            tal:content="view/value"/>
 
  
+   <a href="#" class="pat-contentloader" data-pat-contentloader="content:#clexample1;target:#clexample1target;">Load saved content</a>
+   <div id="clexample1target"></div>
+   <div id="clexample1" style="display:none"><div tal:content="structure view/render_markdown" /></div>
+ 
    
 	<link rel="stylesheet" href="http://ace.jeka.by/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
     <!--link rel="stylesheet" href="http://ace.jeka.by/assets/css/ace-skins.min.css" />
@@ -29,10 +33,10 @@
 <style>
 .btn-group {display: inline}
 .md-header { width: 100%; display: block}
-.markdown-textarea {clear: both;
+.markdown-textarea {clear: both; }
+.md-preview {overflow: scroll; }
+#clexample1  {overflow: scroll; height: 300px}
 </style>
- 
-
    
 <script>
 var md = $('#form-widgets-IMarkdownBehavior-bodytext').val();

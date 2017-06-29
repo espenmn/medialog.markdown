@@ -68,27 +68,27 @@ class MarkdownWidget(text.TextWidget):
         for btn in btns:
             buttons += self.make_button(btn['name'], btn['icon'], btn['buttontext'])
         return """<script>
-		  require([
-		  'jquery',
-		  '++resource++medialog.markdown/ace-extra.min',
-		  '++resource++medialog.markdown/markdown.min',
-		  '++resource++medialog.markdown/bootstrap-markdown.min',
-		  ], function($) {
-			  $(".markdown-textarea").markdown({
-			  fullscreen:false,
-			  language: 'nb',
-			  enableButtons: 'all',
-			  additionalButtons: [
-			[%(buttons)s]
-		  ]
-		})
-		  });
-		</script>""" % { 'buttons': buttons }
-		
+          require([
+          'jquery',
+          '++resource++medialog.markdown/markdown.min',
+          '++resource++medialog.markdown/bootstrap-markdown.min',
+          ], function($) {
+              $(".markdown-textarea").markdown({
+              fullscreen:false,
+              resize: 'vertical',
+              language: 'nb',
+              enableButtons: 'all',
+              additionalButtons: [
+            [%(buttons)s]
+          ]
+        })
+          });
+        </script>""" % { 'buttons': buttons }
+        
     def render_markdown(self):
         """Return the preview as a stringified HTML document."""
         portal_transforms = api.portal.get_tool(name='portal_transforms')
-        value = self.value
+        value = self.value.encode('utf-8')
         data = portal_transforms.convertTo('text/html', value, mimetype='text/x-web-markdown')
         html = data.getData()
         return html
