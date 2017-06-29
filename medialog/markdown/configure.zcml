@@ -14,17 +14,8 @@
   <includeDependencies package="." />
  
   <include package=".widgets" />
-  <!--include package=".browser" /-->
+  <include package=".browser" />
 
- 
-    <browser:page
-        for="*"
-        name="render_markdown"
-        template="templates/render_markdown.pt"
-        permission="zope2.View"
-    />
-  
- 
   <!-- Include behavior -->
   <include file="behaviors.zcml" />
 

@@ -7,32 +7,14 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="medialog.markdown">
 
+ 
 
-  <!-- Tile -->
-  <!-- configure zcml:condition="installed plone.tiles" -->
-    
-  <!-- Include our dependencies -->
-  <include package="plone.app.tiles" />
-  <include package="zope.component" file="meta.zcml" />
-  <include package="zope.security" file="meta.zcml" />
-
-  <include package="plone.app.mosaic" />
-  <include package="plone.tiles" file="meta.zcml" />
-  
+    <browser:page
+          for="*"
+          name="render_from_markdown"
+          permission="zope2.View"
+          class=".views.RenderFromMarkdown"
+          />
 
  
-     
-    <plone:tile
-        name="medialog.markdown.tile"
-        title="Markdown tile"
-        description="Displays icon and some text"
-        for="*"
-        schema=".tiles.IIconTile"
-        class=".tiles.IconTile"
-        template="icontile.pt"
-        permission="zope2.View"
-        add_permission="cmf.ModifyPortalContent"
-        />
-
-     <!--/configure-->
 </configure>

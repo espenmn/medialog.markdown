@@ -25,10 +25,8 @@
    
    
       <a href="#" class="pat-contentloader" data-pat-contentloader="content:#clexample1;target:#clexample1target;">Load content</a>
-   <div id="clexample1target">Original Content</div>
-   <div id="clexample1" style="display:none"><div tal:content="structure view/render_markdown" /></div>
-   
-
+   <div id="clexample1target"></div>
+ 
 <script>
   require([
     'tinymce',
