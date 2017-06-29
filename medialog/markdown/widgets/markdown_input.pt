@@ -37,12 +37,12 @@
 .md-preview {overflow: scroll; }
 #clexample1  {overflow: scroll; height: 300px}
 </style>
-<p id="mdpreview">Preview</p>
+<p class="btn button" id="mdpreview">Preview</p>
 
 <script>
 $( "#mdpreview" ).click(function() {
 var md = $('#form-widgets-IMarkdownBehavior-bodytext').val();
-$.post("http://localhost:8080/teach/asdfasdf/render_from_markdown", { markdown: md}, function( data ) {
+$.post("render_from_markdown", { markdown: md}, function( data ) {
   $( "#result" ).html( data );
 });
 });
