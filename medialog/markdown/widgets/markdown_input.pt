@@ -1,11 +1,9 @@
 <html>
 <body>
  
- 
+ <div id="result"> </div>
 <textarea  class="markdown-textarea"
            type="textarea"
-           rows="50" 
-           cols="10" 
            role="markdown"  
            tal:attributes="id string:${view/id};
            name view/name;
@@ -18,17 +16,25 @@
 
 <link rel="stylesheet" href="http://ace.jeka.by/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
-<p class="btn button button-field context" id="mdpreview">Update Preview</p>
-<div id="result"> </div>
-        
+
+
+
+
+<div class="previewbuttons">
+<p class="button-field context fa fa-eye" id="mdpreview"></p>
+<p class="button-field context fa fa-eye-slash" id="hidepreview"></p>
+<p class="button-field context fa fa-arrows-v" id="previewv"></p>
+</div>
 <script tal:replace="structure view/make_buttons"></script>
 
 <style>
 .btn-group {display: inline}
 .md-header { width: 100%; display: block}
-.markdown-textarea {clear: both; }
-.md-preview {overflow: scroll; }
-#clexample1  {overflow: scroll; height: 300px}
+.bodytextm #form-widgets-IMarkdownBehavior-bodytext  {float: left; }
+.previewbuttons {float: left;}
+.previewbuttons,
+.fullwidth { background:red; width: 49%; clear: none; display: block}
+#result {overflow: scroll; float: right; }
 </style>
 
 <script>
@@ -36,7 +42,14 @@ $( "#mdpreview" ).click(function() {
 var md = $('#form-widgets-IMarkdownBehavior-bodytext').val();
 $.post("render_from_markdown", { markdown: md}, function( data ) {
   $( "#result" ).html( data );
+  $('#result').show();
 });
+});
+$( "#hidepreview" ).click(function() {
+  $('#result').hide();
+});
+$( "#previewv" ).click(function() {
+  $('#result, md-textarea, #form-widgets-IMarkdownBehavior-bodytext').toggleClass( 'fullwidth' );
 });
 </script>   
    
