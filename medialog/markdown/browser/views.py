@@ -10,10 +10,10 @@ class RenderFromMarkdown(BrowserView):
  
     # template = ViewPageTemplateFile('render_markdownt.pt')
 
-    def __call__(self, markdown="", *args, **kw):
-    	return self.render_markdown()
+    def __call__(self, *args, **kw):
+        return self.render_markdown()
          
-    def render_markdown(self):
+    def render_markdown(self, markdown=""):
         """Return the preview as a stringified HTML document."""
         value = self.request.markdown
         portal_transforms = api.portal.get_tool(name='portal_transforms')
