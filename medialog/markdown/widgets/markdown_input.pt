@@ -16,7 +16,7 @@
 
 <link rel="stylesheet" href="http://ace.jeka.by/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 
-
+<script tal:replace="structure view/make_buttons"></script>
 
 
 
@@ -25,16 +25,17 @@
 <p class="button-field context fa fa-eye-slash" id="hidepreview"></p>
 <p class="button-field context fa fa-arrows-v" id="previewv"></p>
 </div>
-<script tal:replace="structure view/make_buttons"></script>
+
 
 <style>
 .btn-group {display: inline}
 .md-header { width: 100%; display: block}
-.bodytextm #form-widgets-IMarkdownBehavior-bodytext  {float: left; }
+.md-textarea {clear:both;}
+.bodytext, #form-widgets-IMarkdownBehavior-bodytext  {float: left; }
 .previewbuttons {float: left;}
 .previewbuttons,
-.fullwidth { background:red; width: 49%; clear: none; display: block}
-#result {overflow: scroll; float: right; }
+.fullwidth { background:red; width: 49%; clear: none; display: block; float: left}
+#result {overflow: scroll;  }
 </style>
 
 <script>
@@ -49,7 +50,7 @@ $( "#hidepreview" ).click(function() {
   $('#result').hide();
 });
 $( "#previewv" ).click(function() {
-  $('#result, md-textarea, #form-widgets-IMarkdownBehavior-bodytext').toggleClass( 'fullwidth' );
+  $('#result, .md-textarea, #form-widgets-IMarkdownBehavior-bodytext').toggleClass( 'fullwidth' );
 });
 </script>   
    
