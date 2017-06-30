@@ -18,7 +18,6 @@
            tal:content="view/value"/>
 
 <link rel="stylesheet" href="http://ace.jeka.by/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
-<script tal:replace="structure view/make_buttons"></script>
 <div id="result"> </div>
 <style>
 .btn-group {display: inline}
@@ -32,6 +31,7 @@
 .disabled { opacity: 0.4}
 </style>
 
+<script tal:replace="structure view/make_buttons"></script>
 <script>
 $( "#mdpreview" ).click(function() {
 var md = $('#form-widgets-IMarkdownBehavior-bodytext').val();
