@@ -1,7 +1,10 @@
 <html>
 <body>
- 
- <div id="result"> </div>
+<div class="previewbuttons">
+  <p class="button-field context fa fa-eye-slash disabled" id="hidepreview"></p>
+  <p class="button-field context fa fa-arrows disabled" id="previewv"></p>
+  <p class="button-field context fa fa-eye" id="mdpreview"> Update Preview</p>
+</div>
 <textarea  class="markdown-textarea"
            type="textarea"
            role="markdown"  
@@ -15,42 +18,36 @@
            tal:content="view/value"/>
 
 <link rel="stylesheet" href="http://ace.jeka.by/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
-
 <script tal:replace="structure view/make_buttons"></script>
-
-
-
-<div class="previewbuttons">
-<p class="button-field context fa fa-eye" id="mdpreview"></p>
-<p class="button-field context fa fa-eye-slash" id="hidepreview"></p>
-<p class="button-field context fa fa-arrows-v" id="previewv"></p>
-</div>
-
-
+<div id="result"> </div>
 <style>
 .btn-group {display: inline}
-.md-header { width: 100%; display: block}
+#result, .md-header { width: 100%; display: block}
+.md-header::after { height: 1px;clear:both; width: 100%; display: block}
 .md-textarea {clear:both;}
 .bodytext, #form-widgets-IMarkdownBehavior-bodytext  {float: left; }
-.previewbuttons {float: left;}
-.previewbuttons,
-.fullwidth { background:red; width: 49%; clear: none; display: block; float: left}
-#result {overflow: scroll;  }
+.previewbuttons {float:right; }
+.halfwidth { width: 49% !important; clear: none; display: block;  }
+#result {overflow: scroll; float: right}
+.disabled { opacity: 0.4}
 </style>
 
 <script>
 $( "#mdpreview" ).click(function() {
 var md = $('#form-widgets-IMarkdownBehavior-bodytext').val();
 $.post("render_from_markdown", { markdown: md}, function( data ) {
-  $( "#result" ).html( data );
   $('#result').show();
+  $( "#result" ).html( data );
+  $('#hidepreview,  #previewv').removeClass('disabled');
 });
 });
 $( "#hidepreview" ).click(function() {
   $('#result').hide();
+  $('#result, .md-textarea, #form-widgets-IMarkdownBehavior-bodytext').removeClass( 'halfwidth' );
+  $('#hidepreview,  #previewv').addClass('disabled');
 });
 $( "#previewv" ).click(function() {
-  $('#result, .md-textarea, #form-widgets-IMarkdownBehavior-bodytext').toggleClass( 'fullwidth' );
+  $('#result, .md-textarea, #form-widgets-IMarkdownBehavior-bodytext').toggleClass( 'halfwidth' );
 });
 </script>   
    

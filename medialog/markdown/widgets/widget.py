@@ -78,6 +78,7 @@ class MarkdownWidget(text.TextWidget):
               resize: 'vertical',
               language: 'nb',
               hiddenButtons: 'cmdPreview', 
+              disabledButtons: 'cmdPreview', 
               additionalButtons: [
             [%(buttons)s]
           ]
