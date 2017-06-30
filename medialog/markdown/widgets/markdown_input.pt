@@ -57,6 +57,12 @@ $( "#hidepreview" ).click(function() {
 $( "#previewv" ).click(function() {
   $('#result, .md-textarea, #form-widgets-IMarkdownBehavior-bodytext').toggleClass( 'halfwidth' );
 });
+$(document).on('keypress', '#form-widgets-IMarkdownBehavior-bodytext', function(e) {
+        if ( e.keyCode == 13 ) {  // detect the enter key
+            $('#mdpreview').click(); // fire a sample click,  you can do anything
+        }
+});
+
 </script>   
    
 </body>
