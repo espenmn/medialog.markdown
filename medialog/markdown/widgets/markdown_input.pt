@@ -26,7 +26,15 @@
 .md-textarea {clear:both;}
 .bodytext, #form-widgets-IMarkdownBehavior-bodytext  {float: left; }
 .previewbuttons {float:right; }
-.halfwidth { width: 49% !important; clear: none; display: block;  }
+.halfwidth { 
+    width: 49% !important; clear: none; display: block;  
+    margin-top: 10px;
+	margin-bottom: 5px;
+	border:  1px solid #CCC;
+	padding: 10px;
+	border-radius: 6px;
+}
+
 #result {overflow: scroll; float: right}
 .disabled { opacity: 0.4}
 </style>
