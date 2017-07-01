@@ -1,0 +1,51 @@
+/* @override http://localhost:8080/Plone/sdfsafa/++resource++medialog.markdown/markdown.css */
+
+.btn-group {
+	display: inline
+}
+
+#result, .md-header {
+	width: 100%;
+	display: block
+}
+
+.md-header::after {
+	height: 1px;
+	clear: both;
+	width: 100%;
+	display: block
+}
+
+.md-textarea {
+	clear: both;
+}
+
+.bodytext, .markdown-textarea {
+	float: left;
+	min-height: 300px;
+}
+
+.previewbuttons {
+	float: right;
+}
+
+.halfwidth {
+	width: 49% !important;
+	clear: none;
+	display: block;
+	min-height: 500px;
+}
+
+#result {
+	overflow: scroll;
+	float: right;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	border: 1px solid #CCC;
+	padding: 10px;
+	border-radius: 6px;
+}
+
+.disabled {
+	opacity: 0.4
+}

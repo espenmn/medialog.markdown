@@ -93,6 +93,10 @@ class MarkdownWidget(text.TextWidget):
         data = portal_transforms.convertTo('text/html', value, mimetype='text/x-web-markdown')
         html = data.getData()
         return html
+    
+    
+    def live_preview(self):
+        return api.portal.get_registry_record(name="live_preview", interface=IMarkdownSettings)
 
 
     zope.interface.implementsOnly(IMarkdownWidget)

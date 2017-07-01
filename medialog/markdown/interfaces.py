@@ -35,6 +35,7 @@ class IButtonPair(form.Schema):
         default=u"""!!! important "Important"\\n     \b"""
     )
  
+ 
 class IMarkdownSettings(form.Schema):
     """Adds settings to medialog.controlpanel
     """
@@ -44,9 +45,14 @@ class IMarkdownSettings(form.Schema):
         label=_(u'Markdown settings'),
         fields=[
              'button_pairs',
+             'live_preview',
         ],
     )
 
+    live_preview = schema.Bool (
+        title = _(u'Live preview', 'live preview'),
+    )
+    
     form.widget(button_pairs=DataGridFieldFactory)
     button_pairs = schema.List(
         title = _(u"button_pairs", 

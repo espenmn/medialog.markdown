@@ -1,6 +1,12 @@
 <registry>
 <records interface="medialog.markdown.interfaces.IMarkdownSettings">
-<value key="button_pairs"></value>
+  <value key="button_pairs"></value>
+  <value key="live_preview">True</value>
 </records>
-
+<records prefix="plone.resources/picker.date"
+       interface="Products.CMFPlone.interfaces.IResourceRegistry">
+  <value key="css">
+    <element>++resource++medialog.markdown/markdown.css</element>
+  </value>
+</records>
 </registry>

@@ -1,5 +1,5 @@
 <html>
-<body>
+<body tal:define="id string:${view/id}">
 <div class="previewbuttons">
   <p class="button-field context fa fa-eye-slash disabled" id="hidepreview"></p>
   <p class="button-field context fa fa-arrows disabled" id="previewv"></p>
@@ -8,7 +8,7 @@
 <textarea  class="markdown-textarea"
            type="textarea"
            role="markdown"  
-           tal:attributes="id string:${view/id};
+           tal:attributes="id id;
            name view/name;
            value view/value;
            disabled view/disabled;
@@ -18,31 +18,13 @@
            tal:content="view/value"/>
 
 <link rel="stylesheet" href="http://ace.jeka.by/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
-<div id="result"> </div>
-<style>
-.btn-group {display: inline}
-#result, .md-header { width: 100%; display: block}
-.md-header::after { height: 1px;clear:both; width: 100%; display: block}
-.md-textarea {clear:both;}
-.bodytext, #form-widgets-IMarkdownBehavior-bodytext  {float: left; }
-.previewbuttons {float:right; }
-.halfwidth { 
-    width: 49% !important; clear: none; display: block;  
-    margin-top: 10px;
-	margin-bottom: 5px;
-	border:  1px solid #CCC;
-	padding: 10px;
-	border-radius: 6px;
-}
-
-#result {overflow: scroll; float: right}
-.disabled { opacity: 0.4}
-</style>
+<link rel="stylesheet" href="++resource++medialog.markdown/markdown.css" />
+<div id="result" class="fullwidth"> </div>
 
 <script tal:replace="structure view/make_buttons"></script>
 <script>
 $( "#mdpreview" ).click(function() {
-var md = $('#form-widgets-IMarkdownBehavior-bodytext').val();
+var md = $('#${id}').val();
 $.post("render_from_markdown", { markdown: md}, function( data ) {
   $('#result').show();
   $( "#result" ).html( data );
@@ -51,18 +33,21 @@ $.post("render_from_markdown", { markdown: md}, function( data ) {
 });
 $( "#hidepreview" ).click(function() {
   $('#result').hide();
-  $('#result, .md-textarea, #form-widgets-IMarkdownBehavior-bodytext').removeClass( 'halfwidth' );
+  $('#result, .md-textarea, #${id}').removeClass( 'halfwidth' );
+  $('#result, .md-textarea, #${id}').addClass( 'fullwidth' );
   $('#hidepreview,  #previewv').addClass('disabled');
 });
 $( "#previewv" ).click(function() {
-  $('#result, .md-textarea, #form-widgets-IMarkdownBehavior-bodytext').toggleClass( 'halfwidth' );
+  $('#result, .md-textarea, #${id}').toggleClass( 'halfwidth' );
+  $('#result, .md-textarea, #${id}').toggleClass( 'fullwidth' );
 });
-$(document).on('keypress', '#form-widgets-IMarkdownBehavior-bodytext', function(e) {
+</script>
+<script tal:condition="view/live_preview">
+$(document).on('keypress', '#${id}', function(e) {
         if ( e.keyCode == 13 ) {  // detect the enter key
             $('#mdpreview').click(); // fire a sample click,  you can do anything
         }
 });
-
 </script>   
    
 </body>
