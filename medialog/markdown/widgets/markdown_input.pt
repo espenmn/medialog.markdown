@@ -5,6 +5,7 @@
   <p class="button-field context fa fa-arrows disabled" id="previewv"></p>
   <p class="button-field context fa fa-eye" id="mdpreview"> Update Preview</p>
 </div>
+<div class="flexbox">
 <textarea  class="markdown-textarea"
            type="textarea"
            role="markdown"  
@@ -16,10 +17,11 @@
            accesskey view/accesskey;
            onselect view/onselect;"   
            tal:content="view/value"/>
+<div id="result" class="fullwidth"> </div>
+</div>
 
 <link rel="stylesheet" href="http://ace.jeka.by/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 <link rel="stylesheet" href="++resource++medialog.markdown/markdown.css" />
-<div id="result" class="fullwidth"> </div>
 
 <script src="++resource++medialog.markdown/jquery.selection.js"> </script>
 <script tal:replace="structure view/make_buttons"></script>
