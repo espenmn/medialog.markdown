@@ -34,8 +34,6 @@ if (len < 3)  {
 }
 $.post("render_from_markdown", { markdown: md}, function( data ) {
   $('#result').show();
-  $('#result, .md-textarea, #${id}').addClass( 'halfwidth' );
-  $('#result, .md-textarea, #${id}').removeClass( 'fullwidth' );
   $( "#result" ).html( data );
   $('#hidepreview,  #previewv').removeClass('disabled');
 });
