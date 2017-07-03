@@ -19,7 +19,7 @@
 
 <link rel="stylesheet" href="http://ace.jeka.by/assets/font-awesome/4.5.0/css/font-awesome.min.css" />
 <link rel="stylesheet" href="++resource++medialog.markdown/markdown.css" />
-<textarea id="result" class="fullwidth"> </textarea>
+<div id="result" class="fullwidth"> </div>
 
 <script tal:replace="structure view/make_buttons"></script>
 <script>
