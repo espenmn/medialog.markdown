@@ -24,6 +24,7 @@ class IMarkdownBehavior(form.Schema):
     
     bodytext = schema.Text(
     	title=u"Body text",
+    	description=u"Note: You can select text to preview, or preview all",
     )
   
     form.widget(
