@@ -21,12 +21,19 @@
 <link rel="stylesheet" href="++resource++medialog.markdown/markdown.css" />
 <div id="result" class="fullwidth"> </div>
 
+<script src="++resource++medialog.markdown/jquery.selection.js"> </script>
 <script tal:replace="structure view/make_buttons"></script>
 <script>
 $( "#mdpreview" ).click(function() {
-var md = $('#${id}').val();
+var md = $('#${id}').selection();
+len = md.length;
+if (len < 3)  {
+    var md = $('#${id}').val();
+}
 $.post("render_from_markdown", { markdown: md}, function( data ) {
   $('#result').show();
+  $('#result, .md-textarea, #${id}').addClass( 'halfwidth' );
+  $('#result, .md-textarea, #${id}').removeClass( 'fullwidth' );
   $( "#result" ).html( data );
   $('#hidepreview,  #previewv').removeClass('disabled');
 });
