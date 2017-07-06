@@ -35,7 +35,7 @@ setup(name='medialog.markdown',
           'plone.api',
           'collective.dexteritytextindexer',
           'plone.app.tiles',
-          'plone.tiles'
+          'plone.tiles',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

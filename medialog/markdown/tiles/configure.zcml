@@ -7,6 +7,9 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="medialog.markdown">
     
+  <!-- Tile -->
+  <!-- configure zcml:condition="installed plone.tiles" -->
+    
   <!-- Include our dependencies -->
   <include package="plone.app.tiles" />
   <include package="zope.component" file="meta.zcml" />
