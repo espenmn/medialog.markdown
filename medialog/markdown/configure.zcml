@@ -15,6 +15,7 @@
  
   <include package=".widgets" />
   <include package=".browser" />
+  <include package=".tiles" />
 
   <!-- Include behavior -->
   <include file="behaviors.zcml" />

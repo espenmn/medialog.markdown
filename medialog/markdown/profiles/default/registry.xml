@@ -9,4 +9,20 @@
     <element>++resource++medialog.markdown/markdown.css</element>
   </value>
 </records>
+
+<records prefix="plone.app.mosaic.app_tiles.markdowntile"
+ interface="plone.app.mosaic.interfaces.ITile">
+ <value key="name">medialog.markdown.tile</value>
+ <value key="label">Markdown Tile</value>
+ <value key="category">advanced</value>
+ <value key="tile_type">app</value>
+ <value key="default_value"></value>
+ <value key="read_only">false</value>
+ <value key="settings">true</value>
+ <value key="favorite">false</value>
+ <value key="rich_text">false</value>
+ <value key="weight">19</value>
+</records>
+ 
+ 
 </registry>

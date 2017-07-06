@@ -19,10 +19,10 @@
     <plone:tile
         name="medialog.markdown.markdowntile"
         title="Markdown tile"
-        description="Markdown tilet"
+        description="Markdown Tile"
         for="*"
-        schema=".tiles.IMarkdownTile"
-        class=".tiles.MarkdownTile"
+        schema=".tile.IMarkdownTile"
+        class=".tile.MarkdownTile"
         template="markdowntile.pt"
         permission="zope2.View"
         add_permission="cmf.ModifyPortalContent"
