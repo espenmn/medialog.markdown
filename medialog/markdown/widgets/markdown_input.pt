@@ -1,5 +1,5 @@
-<html>
-<body tal:define="id string:${view/id}">
+
+<tal:widget tal:define="id string:${view/id}">
 <div class="previewbuttons">
   <p class="button-field context fa fa-eye-slash disabled" id="hidepreview"></p>
   <p class="button-field context fa fa-arrows disabled" id="previewv"></p>
@@ -57,7 +57,6 @@ $(document).on('keypress', '#${id}', function(e) {
 });
 </script>   
    
-</body>
-</html>
+</tal:widget>
  
  
