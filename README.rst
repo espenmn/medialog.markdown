@@ -1,7 +1,7 @@
 Introduction
 ============
 
-An markdown widget for Plone 
+An markdown editor for Plone 
 
 
 Installation
@@ -21,7 +21,13 @@ Add your (extra) buttons
 
 Markdown Tile
 --------
-In mosaic you can add Markdown tile , maybe
+In mosaic you can add Markdown tile 
+
+
+To do
+------
+Make tile searchable
+
 
 
 Author:

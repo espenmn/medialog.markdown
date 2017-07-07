@@ -6,13 +6,13 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="medialog.markdown">
-  
-  
-  <i18n:registerTranslations directory="locales" />  
-    
+
+
+  <i18n:registerTranslations directory="locales" />
+
   <!-- Include configuration for dependencies listed in setup.py -->
   <includeDependencies package="." />
- 
+
   <include package=".widgets" />
   <include package=".browser" />
   <include package=".tiles" />
@@ -30,9 +30,9 @@
   <!-- Register an extension profile to make the product installable in Plone -->
   <genericsetup:registerProfile
       name="default"
-      title="Markdown widget for Plone"
+      title="Markdown editor for Plone"
       directory="profiles/default"
-      description="Extension profile for Markdown for Plone"
+      description="Markdown widget and tile for Plone"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
