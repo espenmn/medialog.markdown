@@ -5,11 +5,6 @@
       lang="en"
       i18n:domain="medialog.markdown">
 <body>
-
-    <!-- tal:block repeat="widget view/widgets/values">
-    <tal:widget tal:content="structure widget/render" />
- 	</tal:block-->
-gdgdfsgsdf
-
+    <div tal:replace="structure view/data/bodytext">
 </body>
 </html>
