@@ -8,14 +8,14 @@
 <div class="flexbox">
 <textarea  class="markdown-textarea"
            type="textarea"
-           role="markdown"  
+           role="markdown"
            tal:attributes="id id;
            name view/name;
            value view/value;
            disabled view/disabled;
            alt view/alt;
            accesskey view/accesskey;
-           onselect view/onselect;"   
+           onselect view/onselect;"
            tal:content="view/value"/>
 <div id="result" class="fullwidth"> </div>
 </div>
@@ -52,11 +52,12 @@ $( "#previewv" ).click(function() {
 <script tal:condition="view/live_preview">
 $(document).on('keypress', '#${id}', function(e) {
         if ( e.keyCode == 13 ) {  // detect the enter key
-            $('#mdpreview').click(); // fire a sample click,  you can do anything
-        }
+            if ( $("#result").css('display') !== 'none') {
+            	$('#mdpreview').click(); // fire a sample click,  you can do anything
+        	}
+    	}
 });
-</script>   
-   
+
+</script>
+
 </tal:widget>
- 
- 
