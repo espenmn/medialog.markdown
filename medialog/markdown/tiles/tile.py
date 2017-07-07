@@ -8,8 +8,9 @@ from zope import schema
 from plone.directives import form
 from zope.i18nmessageid import MessageFactory
 from plone.tiles import Tile
+#from plone.tiles.interfaces import ITileType
 #from zope.interface import provider
-from collective import dexteritytextindexer
+#from collective import dexteritytextindexer
 from zope.schema import getFields
 
 
@@ -22,7 +23,7 @@ _ = MessageFactory('medialog.markdownn')
 
 class IMarkdownTile(model.Schema):
 
-    dexteritytextindexer.searchable('bodytext')
+    #dexteritytextindexer.searchable('bodytext')
 
     bodytext = schema.Text(
     	title=u"Body text",
