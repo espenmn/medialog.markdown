@@ -5,6 +5,6 @@
       lang="en"
       i18n:domain="medialog.markdown">
 <body>
-    <div tal:replace="structure view/data/bodytext">
+    <div tal:replace="structure view/render_markdown">
 </body>
 </html>
