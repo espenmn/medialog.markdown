@@ -19,3 +19,5 @@ medialog.markdown.egg-info/PKG-INFO
 medialog.markdown.egg-info/PKG-INFO
 
 medialog.markdown.egg-info/not-zip-safe
+
+*.zip

@@ -10,7 +10,6 @@
   <include package="zope.component" file="meta.zcml" />
   <include package="zope.app.publisher" file="meta.zcml" />
 
-   <include package="plone.tiles" file="meta.zcml" />
    <include package="plone.tiles" />
 
    <plone:tile
