@@ -36,6 +36,7 @@ $.post("render_from_markdown", { markdown: md}, function( data ) {
   $('#result').show();
   $( "#result" ).html( data );
   $('#hidepreview,  #previewv').removeClass('disabled');
+  MathJax.Hub.Queue(["Typeset",MathJax.Hub,"result"]);
 });
 });
 $( "#hidepreview" ).click(function() {
