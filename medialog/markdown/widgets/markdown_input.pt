@@ -57,13 +57,15 @@ $(document).on('keypress', '#${id}', function(e) {
         if ( e.keyCode == 13 ) {  // detect the enter key
             if ( $("#result").css('display') !== 'none') {
             	$('#mdpreview').click(); // fire a sample click,  you can do anything
-              $('#you_are_here').focus();  // or maybe  $('#result').scrollTop( $("#you_are_here").offset().top );
+              $("#you_are_here").get(0).scrollIntoView();
+              var y = $('#result').scrollTop();
+              $('#result').scrollTop(y-300);
         	}
     	}
 });
-
 </script>
+
 <style>
-.cursor_postion { color: red}
+  .cursor_postion { color: red}
 </style>
 </tal:widget>
