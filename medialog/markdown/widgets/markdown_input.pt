@@ -27,17 +27,19 @@
 <script tal:replace="structure view/make_buttons"></script>
 <script>
 $( "#mdpreview" ).click(function() {
-var md = $('#${id}').selection();
-len = md.length;
-if (len < 3)  {
+  var md = $('#${id}').selection();
+  len = md.length;
+  if (len < 3)  {
     var md = $('#${id}').val();
-}
-$.post("render_from_markdown", { markdown: md}, function( data ) {
-  $('#result').show();
-  $( "#result" ).html( data );
-  $('#hidepreview,  #previewv').removeClass('disabled');
-  MathJax.Hub.Queue(["Typeset",MathJax.Hub,"result"]);
-});
+    var caretPos = $('#${id}')[0].selectionStart;
+    var md = md.slice(0, caretPos) + '<a id="you_are_here" name="you_are_here"><p class="cursor_postion">> -------------------------------------------- </p></a>' + md.slice(caretPos);
+  }
+  $.post("render_from_markdown", { markdown: md}, function( data ) {
+    $('#result').show();
+    $( "#result" ).html( data );
+    $('#hidepreview,  #previewv').removeClass('disabled');
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub,"result"]);
+  });
 });
 $( "#hidepreview" ).click(function() {
   $('#result').hide();
@@ -55,10 +57,13 @@ $(document).on('keypress', '#${id}', function(e) {
         if ( e.keyCode == 13 ) {  // detect the enter key
             if ( $("#result").css('display') !== 'none') {
             	$('#mdpreview').click(); // fire a sample click,  you can do anything
+              $('#you_are_here').focus();  // or maybe  $('#result').scrollTop( $("#you_are_here").offset().top );
         	}
     	}
 });
 
 </script>
-
+<style>
+.cursor_postion { color: red}
+</style>
 </tal:widget>

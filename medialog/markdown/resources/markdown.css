@@ -1,7 +1,3 @@
-/* @override http://localhost:8080/xxx/zdfdfadsf/++resource++medialog.markdown/markdown.css */
-
-/* @override http://localhost:8080/Plone/sdfsafa/++resource++medialog.markdown/markdown.css */
-
 .btn-group {
 	display: inline
 }
@@ -46,6 +42,7 @@
 	padding: 10px;
 	border-radius: 6px;
 	resize: vertical;
+	max-height:  700px;
 }
 
 .disabled {
