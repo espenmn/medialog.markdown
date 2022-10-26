@@ -48,7 +48,8 @@
 
   <include package=".tiles" zcml:condition="installed plone.ap.mosaic" />
 
-
+  <!-- to do: add uninstall mosaic profile -->
+  
   <genericsetup:registerProfile
       name="uninstall"
       title="Markdown editor (uninstall)"
