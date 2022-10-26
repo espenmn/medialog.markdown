@@ -1,6 +1,7 @@
 
 import zope.component
 import zope.interface
+from zope.interface import implementer_only
 import zope.schema.interfaces
 
 from z3c.form import interfaces
@@ -9,15 +10,15 @@ from z3c.form.browser import text
 
 from plone import api
 from medialog.markdown.interfaces import IMarkdownSettings
- 
+
 
 class IMarkdownWidget(interfaces.IWidget):
     """Markdown widget."""
- 
 
+@implementer_only(IMarkdownWidget)
 class MarkdownWidget(text.TextWidget):
     """Markdown Widget"""
-    
+
     def make_button(self, name, icon, buttontext):
         group = 'group' + name
         name = 'cmd' + name
@@ -47,7 +48,7 @@ class MarkdownWidget(text.TextWidget):
                 }
                 e.replaceSelection('%(buttontext)s' + chunk);
                 cursor = selected.start + %(lenght)i - 1;
-                
+
 
                 // Set the cursor
                 e.setSelection(cursor, cursor + chunk.length);
@@ -61,7 +62,7 @@ class MarkdownWidget(text.TextWidget):
               'buttontext' : buttontext,
               'lenght' : lenght,
             }
-              
+
     def make_buttons(self):
         buttons = ""
         btns = api.portal.get_registry_record(name="button_pairs", interface=IMarkdownSettings)
@@ -77,15 +78,15 @@ class MarkdownWidget(text.TextWidget):
               fullscreen:false,
               resize: 'vertical',
               language: 'nb',
-              hiddenButtons: 'cmdPreview', 
-              disabledButtons: 'cmdPreview', 
+              hiddenButtons: 'cmdPreview',
+              disabledButtons: 'cmdPreview',
               additionalButtons: [
             [%(buttons)s]
           ]
         })
           });
         </script>""" % { 'buttons': buttons }
-        
+
     def render_markdown(self):
         """Return the preview as a stringified HTML document."""
         portal_transforms = api.portal.get_tool(name='portal_transforms')
@@ -93,18 +94,15 @@ class MarkdownWidget(text.TextWidget):
         data = portal_transforms.convertTo('text/html', value, mimetype='text/x-web-markdown')
         html = data.getData()
         return html
-    
-    
+
+
     def live_preview(self):
         return api.portal.get_registry_record(name="live_preview", interface=IMarkdownSettings)
 
 
-    zope.interface.implementsOnly(IMarkdownWidget)
-    
-        
+
+
+
 def MarkdownFieldWidget(field, request):
     """IFieldWidget factory for MarkdownWidget."""
     return widget.FieldWidget(field, MarkdownWidget(request))
-    
-    
-    

@@ -5,7 +5,7 @@ from plone import api
 from plone.memoize.view import memoize
 from plone.supermodel import model
 from zope import schema
-from plone.directives import form
+#from plone.directives import form
 from zope.i18nmessageid import MessageFactory
 from plone.tiles import Tile
 #from plone.tiles.interfaces import ITileType
@@ -29,7 +29,7 @@ class IMarkdownTile(model.Schema):
     	title=u"Body text",
     )
 
-    form.widget(
+    model.widget(
           bodytext=MarkdownFieldWidget,
     )
 

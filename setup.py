@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.2.3'
+version = '1.0.0'
 
 setup(name='medialog.markdown',
       version=version,
@@ -27,15 +27,10 @@ setup(name='medialog.markdown',
       install_requires=[
           'setuptools',
           'collective.z3cform.datagridfield',
-          'plone.app.dexterity',
           'plone.behavior',
-          'plone.directives.form',
-          'collective.js.bootstrap',
           'medialog.controlpanel',
           'plone.api',
-          'collective.dexteritytextindexer',
-          'plone.app.tiles',
-          'plone.tiles'
+          'collective.dexteritytextindexer'
           # -*- Extra requirements: -*-
       ],
       entry_points="""
