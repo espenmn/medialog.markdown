@@ -1,0 +1,11 @@
+<registry>
+<record name="plone.app.tiles" >
+ <value >
+   <element remove="true">medialog.markdown.markdowntile</element>
+ </value>
+ </record>
+
+<records prefix="plone.app.mosaic.app_tiles.markdowntile" remove="true" />
+
+
+</registry>

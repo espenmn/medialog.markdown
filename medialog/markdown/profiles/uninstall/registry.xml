@@ -1,34 +1,4 @@
-<configure
-    xmlns="http://namespaces.zope.org/zope"
-    xmlns:five="http://namespaces.zope.org/five"
-    xmlns:browser="http://namespaces.zope.org/browser"
-    xmlns:i18n="http://namespaces.zope.org/i18n"
-    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    xmlns:plone="http://namespaces.plone.org/plone"
-    xmlns:zcml="http://namespaces.zope.org/zcml"
-    i18n_domain="medialog.markdown">
-
 <registry>
-<record name="plone.app.tiles" >
- <field type="plone.registry.field.List" >
- <title>Tiles</title>
- <value_type type="plone.registry.field.TextLine" />
- </field>
- <value >
-   <element remove="true">medialog.markdown.markdowntile</element>
- </value>
- </record>
-
-<records prefix="plone.app.mosaic.app_tiles.markdowntile" zcml:condition="plone.app.mosaic">
- <value key="name" remove="true">medialog.markdown.markdowntile</value>
-
-</records>
-
-<records interface="medialog.markdown.interfaces.IMarkdownSettings" remove="true">
-  <value key="button_pairs"></value>
-  <value key="live_preview">True</value>
-</records>
+<records interface="medialog.markdown.interfaces.IMarkdownSettings" remove="true" />
 
 </registry>
-
-</configure>

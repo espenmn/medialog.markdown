@@ -17,7 +17,6 @@
   <include package=".widgets" />
   <include package=".browser" />
 
-  <include package=".tiles" zcml:condition="installed plone.app.tiles" />
 
   <!-- Include behavior -->
   <include file="behaviors.zcml" />
@@ -34,9 +33,21 @@
       name="default"
       title="Markdown editor for Plone"
       directory="profiles/default"
-      description="Markdown widget and tile for Plone"
+      description="Markdown widget for Plone"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+
+  <genericsetup:registerProfile
+      name="mosaic"
+      title="Markdown editor support for Mosaic"
+      directory="profiles/mosaic"
+      description="Markdown tile for Plone and Mosaic"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      zcml:condition="installed plone.app.mosaic"
+      />
+
+  <include package=".tiles" zcml:condition="installed plone.ap.mosaic" />
+
 
   <genericsetup:registerProfile
       name="uninstall"
