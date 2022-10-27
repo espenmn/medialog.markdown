@@ -30,7 +30,6 @@ setup(name='medialog.markdown',
           'plone.behavior',
           'medialog.controlpanel',
           'plone.api',
-          'collective.dexteritytextindexer'
           # -*- Extra requirements: -*-
       ],
       entry_points="""

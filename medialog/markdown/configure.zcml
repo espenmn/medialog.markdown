@@ -11,6 +11,7 @@
   <i18n:registerTranslations directory="locales" />
 
 
+  <include package="collective.z3cform.datagridfield" />
 
   <include package=".widgets" />
   <include package=".browser" />
