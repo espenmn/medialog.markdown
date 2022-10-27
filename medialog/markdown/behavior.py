@@ -6,6 +6,7 @@ from zope.interface import alsoProvides
 from zope.interface import implements
 from zope.interface import Interface
 #from collective import dexteritytextindexer
+from plone.app.dexterity import textindexer
 from plone.autoform.interfaces import IFormFieldProvider
 #from plone.directives import form
 from plone.supermodel import model
@@ -22,11 +23,11 @@ _ = MessageFactory('medialog.markdown')
 class IMarkdownBehavior(Schema):
     """ A markdown text field"""
 
-    #dexteritytextindexer.searchable('bodytext')
+    textindexer.searchable('bodytext')
 
     bodytext = schema.Text(
     	title=u"Body text",
-    	description=u"Note: You can select text to preview, or preview all",
+        description=u"Note: You can select text to preview, or preview all",
     )
 
     widget(
