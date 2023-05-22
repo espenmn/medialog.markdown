@@ -45,7 +45,7 @@
       zcml:condition="installed plone.app.mosaic"
       />
 
-  <include package=".tiles" zcml:condition="installed plone.ap.mosaic" />
+  <include package=".tiles" zcml:condition="installed plone.app.mosaic" />
 
   <!-- to do: add uninstall mosaic profile -->
 
